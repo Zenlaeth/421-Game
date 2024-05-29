@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.UI;
 
 public class RollButton : MonoBehaviour
 {
     private int currentPlayerPoints = 0;
 
     private TextMeshProUGUI playerPointsTMP;
+
+    public TextMeshProUGUI playerTurnTMP;
 
     public TextMeshProUGUI[] playersPointsTMP;
 
@@ -18,10 +21,9 @@ public class RollButton : MonoBehaviour
 
     public void Pressed()
     {
-        HandlePlayer();
-        
         if (dicesRolling == false)
         {
+            HandlePlayer();
             RollDices();
             StartCoroutine(HandlePoints());
         }
@@ -68,5 +70,7 @@ public class RollButton : MonoBehaviour
         }
 
         dicesRolling = false;
+
+        playerTurnTMP.text = $"Player {currentPlayerPoints + 1}'s turn!";
     }
 }
