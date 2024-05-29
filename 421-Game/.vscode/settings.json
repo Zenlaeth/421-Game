@@ -52,5 +52,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "New Unity Project.sln"
+    "dotnet.defaultSolution": "421-Game.sln"
 }
